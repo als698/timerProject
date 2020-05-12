@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_stop"
         android:layout_width="wrap_content"
@@ -22,7 +21,6 @@
         android:layout_gravity="bottom|center"
         android:layout_margin="@dimen/fab_bigger_margin"
         app:srcCompat="@drawable/ic_pause" />
-
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

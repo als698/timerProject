@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 
 class MainActivity : AppCompatActivity() {
-    enum class TimerState {
+    enum class TimerState {//andra
         Stopped, Paused, Running
     }
 
@@ -46,29 +46,23 @@ class MainActivity : AppCompatActivity() {
 
         private fun initTimer() {
             timerState = PrefUtil.getTimerState(context = this)
-
             if(timerState == TimerState.Stopped)
                 setNewTimerLength()
             else
                 setPreviousTimerLength()
-
             secondsRemaining = if (timerState == TimerState.Running || timerState == TimerState.Paused)
                 prefUtil.getSecondsRemaining(context = this)
             else
                 timerLengthSeconds
-
             if(timerState == TimerState.Running)
                 startTimer()
-
             updateButtons()
             updateCountdownUI()
         }
 
         override fun onResume() {
             super.onResume()
-
             initTimer()
-
             //sters bkg
         }
 
@@ -79,9 +73,8 @@ class MainActivity : AppCompatActivity() {
                 timer.cancel()
                 //start bkg si afisare notif
             } else if (timerState == TimerState.Paused) {
-                //afisare notificari
+                //afisare notificari - laur
             }
-
 
             PrefUtil.setPreviousTimerLenghtSeconds(timerLengthSeconds)
             PrefUtil.setSecondsRemaining(secondsRemaining, context = this)
