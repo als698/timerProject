@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                  TimerState = TimerState.Running
             updateButtons()
         }
-
         fab_pause.setOnClickListener { v->
             timer.cancel()
             timerState = TimerState.Paused
